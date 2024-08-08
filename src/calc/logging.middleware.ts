@@ -12,7 +12,7 @@ export class ApiLoggerMiddleware implements NestMiddleware {
       const duration = process.hrtime(start);
       const milliseconds = (duration[0] * 1000 + duration[1] / 1e6).toFixed(2);
       winstonLogger.info(
-        `${method} ${originalUrl} ${res.statusCode} ${milliseconds} ms`,
+        `Method: ${method} Request URL ${originalUrl} Status code: ${res.statusCode} Response Time: ${milliseconds} ms`,
       );
     });
 
